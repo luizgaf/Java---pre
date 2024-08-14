@@ -12,19 +12,11 @@ public class Gas{
             System.out.println("3- Diesel");
             r = sc.nextInt();
             switch (r) {
-                case 1:
-                    a++;
-                    break;
-                case 2:
-                    g++;
-                    break;
-                case 3:
-                    d++;
-                    break;
-                case 4:
-                    break;
-                default:
-                    System.out.println("ERRO: caractere inválido tente novamente");
+                case 1 -> a++;
+                case 2 -> g++;
+                case 3 -> d++;
+                case 4 -> {}
+                default -> System.out.println("ERRO: caractere inválido tente novamente");
             }
         } while (r != 4);
         System.out.printf("Muito Obrigado!%nÁlcool: %d%nGasolina: %d%nDiesel: %d", a, g, d);
