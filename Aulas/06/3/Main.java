@@ -30,8 +30,10 @@ public class Main{
         }
 
         System.out.println("Busy Rooms:");
-        for(int j = 0; j < i; j++ ){
-            System.out.printf("%d : %s, %s %n", data[ocupied[j]].getRoom(), data[ocupied[j]].getName(), data[ocupied[j]].getEmail());
+        for(int j = 0; j < 10; j++ ){
+           if(data[j] != null){
+            System.out.println(j + " : " + data[j].getName() + ", " + data[j].getEmail());
+           }
         }
 
     }
