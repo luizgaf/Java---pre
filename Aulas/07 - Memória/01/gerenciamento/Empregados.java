@@ -3,8 +3,8 @@ package gerenciamento;
 public class Empregados{
 
     private String name;
-    private int id;
-    private double salary;
+    private Integer id;
+    private Double salary;
 
     public Empregados(String name, int id, double salary){
         this.name = name;
@@ -12,8 +12,8 @@ public class Empregados{
         this.salary = salary;
     }
 
-    public void increaseSalary(int percentage){
-        this.salary += (this.salary * (percentage/100));
+    public void increaseSalary(double percentage) {
+        salary += salary * percentage / 100.0;
     }
 
         public int getId() {
