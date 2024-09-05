@@ -2,6 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+import org.graalvm.polyglot.*;
+import calc.Func;
 
 public class Calculator{
     public static void main(String[] args) {
@@ -156,9 +161,15 @@ public class Calculator{
         button2.addActionListener(e -> textField.setText(textField.getText() + "x"));
         button3.addActionListener(e -> textField.setText(textField.getText() + "/"));
 
+        buttonClear.addActionListener(e -> textField.setText(" "));
 
+        // Funcionamento
 
-        // Tornar a janela visível
-        frame.setVisible(true);
+        String expression = textField.getText();
+
+        expression = expression.replace("x", "*").replace("÷", "/");
+
+            Object result = Func.calculate(expression);  
+            buttonEqual.addActionListener(e ->textField.setText(result.toString()));  
     }
 }
