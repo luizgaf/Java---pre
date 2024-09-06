@@ -1,12 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
-import org.graalvm.polyglot.*;
-import calc.Func;
+import javax.swing.*;
+
 
 public class Calculator{
     public static void main(String[] args) {
@@ -163,13 +157,10 @@ public class Calculator{
 
         buttonClear.addActionListener(e -> textField.setText(" "));
 
+        
+
         // Funcionamento
-
-        String expression = textField.getText();
-
-        expression = expression.replace("x", "*").replace("÷", "/");
-
-            Object result = Func.calculate(expression);  
-            buttonEqual.addActionListener(e ->textField.setText(result.toString()));  
+        frame.setVisible(true);
+ 
     }
 }
